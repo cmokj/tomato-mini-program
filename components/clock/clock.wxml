@@ -1,0 +1,4 @@
+<view class="tomatoClock" hover-class="active">
+ <image src="../../images/tomato.png"></image>
+  <text style="font-size:{{fontSize + 'rpx'}}">{{text}}</text>
+</view>

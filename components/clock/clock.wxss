@@ -1,6 +1,5 @@
 .tomatoClock {
   padding: 0;
-  border: 1px solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,4 +15,8 @@
 .tomatoClock > image {
   width: 320rpx;
   height: 320rpx;
+}
+
+.tomatoClock.active {
+  opacity: 0.9;
 }
