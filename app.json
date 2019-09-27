@@ -1,5 +1,6 @@
 {
     "pages": [
+      "components/clock",
         "pages/home/home",
         "components/button/button"
     ],
