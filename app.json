@@ -1,7 +1,7 @@
 {
     "pages": [
-        "components/button/button",
-        "pages/home/home"
+        "pages/home/home",
+        "components/button/button"
     ],
     "window": {
         "backgroundTextStyle": "light",

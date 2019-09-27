@@ -1,2 +1,1 @@
-<!--components/button/button.wxml-->
-<button class="tomatoButton {{type === 'default' ? 'default':'gradient'}} {{size === 'mini' &&' mini'}}">创建任务</button>
+<button class="tomatoButton {{type === 'default' ? 'default':'gradient'}} {{size === 'mini' && 'mini'}}">{{text}}</button>
