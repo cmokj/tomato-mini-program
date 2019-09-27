@@ -1,0 +1,4 @@
+<view class="tomatoClock">
+  <text>111</text>
+ <image src="../../../images/tomato.png"></image>
+</view>
