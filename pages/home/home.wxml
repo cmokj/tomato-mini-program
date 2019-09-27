@@ -1,3 +1,3 @@
 <!--pages/home/home.wxml-->
 <text>pages/home/home.wxml</text>
-<g-button text="创建任务" type="gradient" size="default"></g-button>
+<g-button text="创建任务" type="gradient" size="default">创建任务</g-button>
