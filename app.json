@@ -1,14 +1,15 @@
 {
     "pages": [
-        "pages/home/home",
-        "components/button/button",
-        "components/clock/clock"
+      "pages/home/home",
+      "components/confirmForm/confirmForm",
+      "components/button/button",
+      "components/clock/clock"
     ],
     "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "WeChat",
+      "navigationBarTextStyle": "black"
     },
     "sitemapLocation": "sitemap.json"
 }

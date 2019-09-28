@@ -1,2 +1,3 @@
 <g-button text="创建任务" type="gradient"></g-button>
 <g-clock text="点击开始番茄"></g-clock>
+<g-confirmForm visible="{{visible}}" placeholder="理由" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>

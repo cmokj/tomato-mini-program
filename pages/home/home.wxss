@@ -1,2 +1,3 @@
 @import "../../components/button/button";
 @import "../../components/clock/clock";
+@import "../../components/confirmForm/confirmForm";
