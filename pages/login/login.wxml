@@ -2,8 +2,8 @@
 <view class="login-wrapper">
   <view class="input-wrapper">
     <text>注册账号</text>
-    <input placeholder="账号"></input>
-    <input placeholder="密码" type="password"></input>
+    <input placeholder="账号" placeholder-style="color: #fa8f6d"></input>
+    <input placeholder="密码" type="password" placeholder-style="color: #fa8f6d"></input>
   </view>
   <button>注册</button>
   <navigator>已有账号？直接登录></navigator>

@@ -1,2 +1,69 @@
 /* pages/login/login.wxss */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 83rpx;
+}
+
+.login-wrapper > .input-wrapper > text {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #333;
+  display: inline-block;
+  position: relative;
+  transform: translateX(-5rpx);
+}
+
+.login-wrapper > .input-wrapper > text::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15rpx;
+  background-color: #fedccf;
+  position: absolute;
+  bottom: 8rpx;
+  z-index: -1;
+}
+
+.login-wrapper > .input-wrapper > input {
+  color: #333;
+  font-size: 24rpx;
+  width: 600rpx;
+  height: 80rpx;
+  border: 2rpx solid #fa8f6d;
+  /* box-shadow: 0rpx 5rpx 15rpx 0rpx rgba(246,112,90,0.30); */
+  border-radius: 12rpx;
+  padding-left: 35rpx;
+  margin-top: 55rpx;
+  margin-bottom: 55rpx;
+}
+
+.login-wrapper > button::after {
+  border: none;
+}
+
+.login-wrapper > button {
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right,#EF9B75, #F6705A);
+  box-shadow: 0px 11px 32px 0px rgba(246,112,90,0.30);
+  margin-bottom: 52rpx;
+}
+
+.login-wrapper > button-hover { 
+  opacity: 0.6; 
+}
+
+.login-wrapper > navigator {
+  color: #F6705A;
+  font-size: 20rpx;
+}
 
