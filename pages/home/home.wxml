@@ -1,3 +1,24 @@
-<g-button text="创建任务" type="gradient"></g-button>
-<g-clock text="点击开始番茄"></g-clock>
-<g-confirmForm visible="{{visible}}" placeholder="理由" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
+<view class="container">
+  <view class="toDoList">
+    11111
+  </view>
+  <view class="tomato-wrapper">
+    <g-button class="createTask" text="创建任务" type="gradient"></g-button>
+    <navigator class="tomato">
+    <!-- <navigator class="tomato" url="/pages/tomato/tomato"> -->
+    <g-clock text="点击开始番茄"></g-clock>
+    </navigator>
+  </view>
+  <g-confirmForm visible="{{visible}}" placeholder="理由" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
+  <view class="nav-wrapper">
+    <navigator>
+      <image src="../../images/total-active.png"></image>专注
+    </navigator>
+    <navigator>
+      <image src="../../images/home.png"></image>数据统计
+    </navigator>
+    <navigator>
+      <image src="../../images/me.png"></image>我的
+    </navigator>
+  </view>
+</view>

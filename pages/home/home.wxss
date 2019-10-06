@@ -1,3 +1,50 @@
-@import "../../components/button/button";
-@import "../../components/clock/clock";
-@import "../../components/confirmForm/confirmForm";
+.container {
+  height: 100vh;
+  background: #F6F6F6;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 25rpx;
+}
+
+.container > .tomato-wrapper {
+    background:#EEF7F6;
+    border-radius: 8rpx;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);
+    height: 473rpx;
+    width: 100%;
+    margin: 25rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container > .tomato-wrapper > .createTask {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.container > .nav-wrapper {
+  width: 100vw;
+  background: #FDFDFD;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container > .nav-wrapper > navigator {
+  color: #A2A2A2;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container > .nav-wrapper > navigator > image {
+  width: 48rpx;
+  height: 48rpx;
+  margin: 10rpx 0;
+}

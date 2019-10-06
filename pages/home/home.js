@@ -1,6 +1,6 @@
 Page({
   data: {
-    visible: true
+    visible: false
   },
   confirm(e) {
     console.log(e.detail)
