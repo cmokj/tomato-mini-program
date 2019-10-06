@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 83rpx;
 }
 
 .login-wrapper > .input-wrapper > text {
@@ -14,6 +13,7 @@
   display: inline-block;
   position: relative;
   transform: translateX(-5rpx);
+  margin-top: 83rpx;
 }
 
 .login-wrapper > .input-wrapper > text::after {
