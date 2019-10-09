@@ -1,0 +1,15 @@
+<view class="tomatoClock-wrapper">
+  <text>距结束还有</text>
+  <view class="clock"><g-clock text="{{time}}" fontSize="52"></g-clock></view>
+  <view wx:if="{{!end}}" class="pause"  bindtap="pause">
+    <g-button size="mini" type="gradient" text="{{pauseText}}"></g-button>
+  </view>
+  <view wx:if="{{!end}}" class="abandon" bindtap="abandon">
+    <g-button size="mini" text="放弃"></g-button>
+  </view>
+  <view wx:if="{{end}}" bindtap="anotherClock">
+    <g-button size="mini" type="gradient" text="再来一组"></g-button>
+  </view>
+    <g-confirmForm class="abandonForm" visible="{{showAbandonForm}}" placeholder="放弃理由？" bindconfirm="confirmAbandon" bindcancel="hideAbandonForm"></g-confirmForm>
+    <g-confirmForm class="finishForm" visible="{{showFinishForm}}" placeholder="完成了啥？" bindconfirm="confirmFinish" bindcancel="hideFinishForm"></g-confirmForm>
+</view>

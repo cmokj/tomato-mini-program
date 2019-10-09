@@ -1,15 +1,17 @@
 <view class="container">
-  <view class="toDoList">
-    11111
+  <view class="todoList">
+    <view class="item" wx:for="{{lists}}" wx:item="{{item.id}}" data-index="{{index}}" bindtap="destroyTodo"> 
+      <view class="select {{item.complete && 'active'}}"></view>
+      <text>{{item.text}}</text>
+    </view>
   </view>
   <view class="tomato-wrapper">
-    <g-button class="createTask" text="创建任务" type="gradient"></g-button>
-    <navigator class="tomato">
-    <!-- <navigator class="tomato" url="/pages/tomato/tomato"> -->
+    <g-button class="createTask" text="创建任务" type="gradient" bindtap="createTask"></g-button>
+    <navigator class="tomato" url="/pages/tomatoClock/tomatoClock">
     <g-clock text="点击开始番茄"></g-clock>
     </navigator>
   </view>
-  <g-confirmForm visible="{{visible}}" placeholder="理由" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
+  <g-confirmForm visible="{{visible}}" placeholder="今天要做什么呢？" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
   <view class="nav-wrapper">
     <navigator>
       <image src="../../images/total-active.png"></image>专注

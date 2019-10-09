@@ -1,0 +1,27 @@
+/* pages/tomatoClock/tomatoClock.wxss */
+.tomatoClock-wrapper {
+  text-align: center;
+  background-color: #EEF7F6;
+  height: 100vh;
+}
+
+.tomatoClock-wrapper > text {
+  font-size: 26rpx;
+  color: #F87A5F;
+  display: block;
+  padding-top: 180rpx;
+}
+
+.tomatoClock-wrapper > .clock {
+  margin: 42rpx 0;
+}
+
+.tomatoClock-wrapper > .pause {
+  margin-bottom: 42rpx;
+}
+
+.tomatoClock-wrapper > .abandonForm,
+.tomatoClock-wrapper > .finishForm {
+  text-align: left;
+}
+

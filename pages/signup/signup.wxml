@@ -1,0 +1,10 @@
+<!--pages/signup/signup.wxml-->
+<view class="signup-wrapper">
+  <view class="input-wrapper">
+    <text>{{topic}}</text>
+    <input placeholder="账号" placeholder-style="color: #fa8f6d"></input>
+    <input placeholder="密码" type="password" placeholder-style="color: #fa8f6d"></input>
+  </view>
+  <button class="signupOrSigninButton">{{buttonText}}</button>
+  <button class="toSigninOrSignup" bindtap="toSignin">{{navText}}</button>
+</view>

@@ -2,8 +2,52 @@
   height: 100vh;
   background: #F6F6F6;
   display: flex;
-  justify-content: flex-end;
   padding: 0 25rpx;
+}
+
+.container > .todoList {
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+}
+
+.container > .todoList > .item {
+  background-color: #fff;
+  padding: 24rpx 30rpx;
+  border-radius: 8rpx;
+  margin-top: 24rpx;
+  box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+}
+
+.container > .todoList > .item > .select {
+  width: 24rpx;
+  height: 24rpx;
+  border: 5rpx solid #f6735e;
+  border-radius: 50%;
+  position: relative;
+}
+
+.container > .todoList > .item > .select.active::after {
+  content: "";
+  display: block;
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background-color: #f6735e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.container > .todoList > .item > text {
+  color: #333;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  width: 100%;
+  margin-left: 30rpx;
 }
 
 .container > .tomato-wrapper {

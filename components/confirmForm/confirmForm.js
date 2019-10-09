@@ -16,13 +16,6 @@ Component({
   data: {
     content: ""
   },
-  // lifetimes: {
-  //   attached() {
-  //     if (this.properties.value) {
-  //       this.properties.value = this.data._value;
-  //     }
-  //   }
-  // },
   methods: {
     watchValue(event) {
       this.data.content = event.detail.value;
