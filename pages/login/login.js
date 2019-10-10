@@ -1,25 +1,11 @@
-// pages/signup/signup.js
+// pages/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    topic:"绑定PC账号",
-    buttonText:"登录",
-    navText:"没有账号？点击注册 >"
-  },
 
-  toSignin: function () {
-    if (this.data.topic === "绑定PC账号") {
-      this.setData({ topic: "注册账号"});
-      this.setData({buttonText: "注册"});
-      this.setData({ navText: "已有账号？点击登录 >"})
-    } else {
-      this.setData({ topic: "绑定PC账号" });
-      this.setData({ buttonText: "登录" });
-      this.setData({ navText: "没有账号？点击注册 >" })
-    }
   },
 
   /**

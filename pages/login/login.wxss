@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+.login-wrapper {
+  height: 100vh;
+  background-color: #EEF7F6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper > .userPic {
+  width: 269rpx;
+  height: 269rpx;
+  border: 16rpx solid #F87B60;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.login-wrapper > .userNickName {
+  font-size: 28rpx;
+  color: #F6705A;
+  margin-top: 18rpx;
+  margin-bottom: 70rpx;
+  position: relative;
+}
+
+.login-wrapper > .userNickName::after {
+  content: "";
+  display: block;
+  width: 150%;
+  height: 3rpx;
+  background-color: #F6705A;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,16rpx);
+}
+
+.login-wrapper > navigator {
+  font-size: 20rpx;
+  color: #F6705A;
+  margin-top: 50rpx;
+}

@@ -1,17 +1,19 @@
 {
-    "pages": [
-      "pages/home/home",
-      "pages/tomatoClock/tomatoClock",
-      "pages/signup/signup",
-      "components/confirmForm/confirmForm",
-      "components/button/button",
-      "components/clock/clock"
-    ],
-    "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#fff",
-      "navigationBarTitleText": "WeChat",
-      "navigationBarTextStyle": "black"
-    },
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/tomatoClock/tomatoClock",
+    "pages/signup/signup",
+    "components/confirmForm/confirmForm",
+    "components/button/button",
+    "components/clock/clock",
+    ".gitignore"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="login-wrapper">
+  <view class="userPic">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="userNickName">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <g-button type="gradient" size="mini" text="登录"></g-button>
+  <navigator url="../signup/signup">还没有与PC端绑定？去绑定 ></navigator>
+</view>
