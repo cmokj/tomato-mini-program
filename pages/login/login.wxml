@@ -6,6 +6,6 @@
   <view class="userNickName">
     <open-data type="userNickName"></open-data>
   </view>
-  <g-button type="gradient" size="mini" text="登录"></g-button>
+  <button open-type="getUserInfo" bindgetuserinfo="login">登录</button>
   <navigator url="../signup/signup">还没有与PC端绑定？去绑定 ></navigator>
 </view>

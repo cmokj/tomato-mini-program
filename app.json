@@ -6,8 +6,7 @@
     "pages/signup/signup",
     "components/confirmForm/confirmForm",
     "components/button/button",
-    "components/clock/clock",
-    ".gitignore"
+    "components/clock/clock"
   ],
   "window": {
     "backgroundTextStyle": "light",
