@@ -1,8 +1,8 @@
 <view class="container">
   <view class="todoList">
-    <view class="item" wx:for="{{lists}}" wx:item="{{item.id}}" data-index="{{index}}" bindtap="destroyTodo"> 
-      <view class="select {{item.complete && 'active'}}"></view>
-      <text>{{item.text}}</text>
+    <view class="item" wx:for="{{lists}}" wx:item="{{item.id}}"> 
+      <view class="select {{item.completed && 'active'}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="destroyTodo"></view>
+      <text data-id="{{item.id}}" data-index="{{index}}" bindtap="updateTask">{{item.description}}</text>
     </view>
   </view>
   <view class="tomato-wrapper">
@@ -11,14 +11,15 @@
     <g-clock text="点击开始番茄"></g-clock>
     </navigator>
   </view>
-  <g-confirmForm visible="{{visible}}" placeholder="今天要做什么呢？" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
+  <g-confirmForm visible="{{createTaskVisible}}" placeholder="今天要做什么呢？" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
+  <g-confirmForm visible="{{updateTaskVisible}}" bindconfirm="updateConfirm" bindcancel="cancel" value="{{updateContent}}"></g-confirmForm>
   <view class="nav-wrapper">
     <navigator>
       <image src="../../images/total-active.png"></image>专注
     </navigator>
-    <navigator>
+    <!-- <navigator>
       <image src="../../images/home.png"></image>数据统计
-    </navigator>
+    </navigator> -->
     <navigator>
       <image src="../../images/me.png"></image>我的
     </navigator>

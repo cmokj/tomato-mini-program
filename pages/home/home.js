@@ -1,38 +1,83 @@
+const { http } = require('../../lib/http.js');
+
 Page({
   data: {
-    visible: false,
-    lists: [
-      { id: 0, text: "今天星期一今天星期一今天星期一今天星期一今天星期一今天星期一今天星期一今天星期一今天星期一", complete: true },
-      { id: 1, text: "今天星期二，我要把小程序完成我要把小程序完成我要把小程序完成我要把小程序完成我要把小程序完成我要把小程序完成。", complete: true },
-      { id: 2, text: "今天星期三，我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡我要吃炸鸡。", complete: false },
-      { id: 3, text: "今天星期四，我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶我要喝奶茶。", complete: false },
-      { id: 4, text: "今天星期五，我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼我要看海贼。", complete: false },
-      { id: 5, text: "今天星期六，我要看美剧。", complete: false }
-    ]
+    createTaskVisible: false,
+    updateTaskVisible: false,
+    lists: [],
+    currentId: "",
+    currentIndex: "",
+    updateContet: ""
+  },
+  
+  onShow: function() {
+    http.get('/todos?completed=false')
+    .then(response => {
+      this.setData({ lists: response.response.data.resources })
+    })
   },
 
-  confirm(e) {
+  confirm: function(e) {
     let content = e.detail;
+    console.log(content)
     if(content) {
-      let newId = this.data.lists.length;
-      let todo = [{ id: newId, text: content, complete: false }];
-      this.data.lists = todo.concat(this.data.lists);
-      this.setData({ lists: this.data.lists })
+      http.post('/todos',{
+        description: content
+      }).then((response) => {
+        let todo = [response.response.data.resource];
+        this.data.lists = todo.concat(this.data.lists);
+        this.setData({ 
+          lists: this.data.lists, 
+          createTaskVisible: false
+        });
+      })
     }
-    this.setData({ visible: false })
   },
   
   cancel(e) {
-    this.setData({visible:false})
+    this.setData({ 
+      createTaskVisible: false,
+      updateTaskVisible: false
+    })
   },
 
   createTask() {
-    this.setData({ visible: !this.data.visible})
+    this.setData({ createTaskVisible: !this.data.createTaskVisible})
+  },
+
+  updateTask: function (e) {
+    let index = e.currentTarget.dataset.index;
+    let id = e.currentTarget.dataset.id;
+    let text = this.data.lists[index].description;
+    this.setData({ 
+      updateTaskVisible: true,
+      updateContent: text,
+      currentId: id,
+      currentIndex: index
+    });    
+  },
+
+  updateConfirm: function(e) {
+    let content = e.detail;
+    http.put(`/todos/${this.data.currentId}`,{
+      description: content
+    }).then(response => {
+      this.data.lists[this.data.currentIndex].description = content;
+      this.setData({ 
+        lists: this.data.lists,
+        updateTaskVisible: false
+      });
+    })
   },
 
   destroyTodo(e) {
     let index = e.currentTarget.dataset.index;
-    this.data.lists[index].complete = true;
-    this.setData({ lists: this.data.lists });
+    let id = e.currentTarget.dataset.id;
+    http.put(`/todos/${id}`,{
+      completed: true
+    }).then(response => {
+      this.data.lists[index].completed = true;
+      this.setData({ lists: this.data.lists });
+    });
   }
 })
