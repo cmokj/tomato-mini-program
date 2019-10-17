@@ -20,6 +20,14 @@
     </view>
   </view>
   <view class="todoLists">
+    <view class="completedTodos" wx:if="{{historyActive}}" wx:for="{{tomato}}" wx:for-index="key">
+    <wxs src="../comm.wxs" module="comm" />
+    <view class="todoDate">{{comm.changeDate(key)}}</view>
+    <view class="todoItem" wx:for="{{tomato[key]}}" wx:for-item="item">
+        <view class="todoMoment">{{comm.changeTime(item.created_at)}}</view>
+        <view class="todoContent">{{item.description}}</view>
+    </view>
+    </view>
     <view class="completedTodos" wx:if="{{completedTodoActive}}" wx:for="{{todos}}" wx:for-index="key">
     <wxs src="../comm.wxs" module="comm" />
     <view class="todoDate">{{comm.changeDate(key)}}</view>

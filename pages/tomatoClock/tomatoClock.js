@@ -1,16 +1,19 @@
 // pages/tomatoClock/tomatoClock.js
+const { http } = require('../../lib/http.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    defaultTime: 1500,
+    defaultTime: 5,
     time: "",
     pauseText: "暂停",
     end: false,
     showAbandonForm: false,
-    showFinishForm: false
+    showFinishForm: false,
+    tomato: {}
   },
 
   timerId: null,
@@ -20,6 +23,9 @@ Page({
    */
   onShow: function () {
     this.startClock();
+    http.post('/tomatoes').then(response => {
+      this.setData({ tomato: response.response.data.resource })
+    })
   },
 
   changeTime: function(){
@@ -71,14 +77,25 @@ Page({
   
   confirmAbandon: function(e) {
     let content = e.detail;
-    wx.navigateBack({
-      to: -1
+    http.put(`/tomatoes/${this.data.tomato.id}`, {
+      description: `因为${content}，放弃任务`,
+      aborted: true
+    }).then(response => {
+      this.setData({ showFinishForm: false });
+      wx.navigateBack({
+        to: -1
+      })
     })
   },
 
   confirmFinish: function(e) {
     let content = e.detail;
-    this.setData({ showFinishForm: false })
+    http.put(`/tomatoes/${this.data.tomato.id}`,{
+      description: content,
+      aborted: false
+    }).then(response => {
+      this.setData({ showFinishForm: false })
+    })
   },
 
   hideAbandonForm: function () {
