@@ -13,15 +13,4 @@
   </view>
   <g-confirmForm visible="{{createTaskVisible}}" placeholder="今天要做什么呢？" bindconfirm="confirm" bindcancel="cancel"></g-confirmForm>
   <g-confirmForm visible="{{updateTaskVisible}}" bindconfirm="updateConfirm" bindcancel="cancel" value="{{updateContent}}"></g-confirmForm>
-  <view class="nav-wrapper">
-    <navigator>
-      <image src="../../images/total-active.png"></image>专注
-    </navigator>
-    <!-- <navigator>
-      <image src="../../images/home.png"></image>数据统计
-    </navigator> -->
-    <navigator>
-      <image src="../../images/me.png"></image>我的
-    </navigator>
-  </view>
 </view>

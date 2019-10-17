@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    defaultTime: 5,
+    defaultTime: 1500,
     time: "",
     pauseText: "暂停",
     end: false,

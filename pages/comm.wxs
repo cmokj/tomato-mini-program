@@ -1,0 +1,19 @@
+var changeDate = function (oldDate) {
+  var m = oldDate.slice(0,2);
+  var d = oldDate.substring(2);
+  var newDate = m + "月" + d + "日";
+  return newDate;
+}
+
+var changeTime = function (oldTime) {
+  var time = getDate(oldTime);
+  var hh = time.getHours();
+  var mm = time.getMinutes();
+  var newTime = hh + ":" + mm;
+  return newTime;
+}
+
+module.exports = {
+  changeDate: changeDate,
+  changeTime: changeTime
+}

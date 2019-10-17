@@ -8,9 +8,21 @@ Page({
     currentId: "",
     currentIndex: "",
     updateContet: ""
+  }, 
+  
+  pageLifetimes: {
+    show() {
+      console.log(this.getTabBar())
+      if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0
+        })
+      }
+    }
   },
   
-  onShow: function() {
+  onShow: function () {
     http.get('/todos?completed=false')
     .then(response => {
       this.setData({ lists: response.response.data.resources })

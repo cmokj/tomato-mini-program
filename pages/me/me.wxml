@@ -1,0 +1,32 @@
+<!--pages/me/me.wxml-->
+
+<view class="me-wrapper">
+  <view class="information">
+    <view class="userPic">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="userNickName-wrapper">
+      <open-data class="userNickName" type="userNickName"></open-data>
+      <text>绑定PC账号</text>
+    </view>
+    <text>问题反馈</text>
+  </view>
+  <view class="nav">
+    <view class="history {{historyActive}}">
+      <button bindtap="toHistory">番茄历史</button>
+    </view>
+    <view class="completedTodo {{completedTodoActive}}">
+      <button bindtap="toCompletedTodo">我完成的任务</button>
+    </view>
+  </view>
+  <view class="todoLists">
+    <view class="completedTodos" wx:if="{{completedTodoActive}}" wx:for="{{todos}}" wx:for-index="key">
+    <wxs src="../comm.wxs" module="comm" />
+    <view class="todoDate">{{comm.changeDate(key)}}</view>
+    <view class="todoItem" wx:for="{{todos[key]}}" wx:for-item="item">
+        <view class="todoMoment">{{comm.changeTime(item.created_at)}}</view>
+        <view class="todoContent">{{item.description}}</view>
+    </view>
+    </view>
+  </view>
+</view>
